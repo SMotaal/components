@@ -1,3 +1,0 @@
-# SMotaal's Tokenizer
-
-## Requirements
