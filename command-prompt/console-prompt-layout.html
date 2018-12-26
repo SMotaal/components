@@ -1,0 +1,153 @@
+<!-- DevTools -->
+<!-- Main Panel -->
+<div is="" class="vbox flex-auto tabbed-pane insertion-point-main">
+  <!-- shadow-root -->
+  <template shadow-root id="UI.TabbedPane" src="console-prompt-shadow.html"></template>
+  <!-- shadow-root -->
+  <!-- Toolbar -->
+  <div is="" class="widget hbox console-settings-pane hidden">
+    <div is="" class="toolbar"></div>
+    <div is="" class="toolbar"></div>
+  </div>
+  <!-- Toolbar -->
+  <!-- Pinpane -->
+  <div is="" class="vbox flex-auto console-view-pinpane"></div>
+  <!-- Pinpane -->
+  <!-- Messages -->
+  <div is="" id="console-messages" class="monospace" style="overflow: auto;">
+    <div is="" aria-hidden="true" style="height: 0px; color: transparent;"></div>
+    <div is="" tabindex="-1" class="console-group console-group-messages" style="">
+      <div is="" class="console-message-wrapper">
+        <div is="" class="console-user-command">
+          <span is="" class="console-timestamp">17:25:55.578 </span
+          ><span
+            is="ui-icon"
+            class="command-result-icon spritesheet-smallicons smallicon-user-command"
+            style="--spritesheet-position:-40px 10px; width: 10px; height: 10px;"
+          ></span
+          ><span is="" class="source-code"><span is="" class="cm-js-keyword">this</span></span>
+        </div>
+      </div>
+      <div is="" class="console-message-wrapper console-info-level console-adjacent-user-command-result">
+        <div is="" class="console-message console-user-command-result">
+          <span
+            is="ui-icon"
+            class="command-result-icon spritesheet-smallicons smallicon-command-result"
+            style="--spritesheet-position:0px 70px; width: 10px; height: 10px;"
+          ></span
+          ><span is="" class="console-timestamp">17:25:55.591 </span
+          ><span is="" class="source-code"
+            ><span is="" class="console-message-text"
+              ><div is="" class="console-view-object-properties-section object-value-object source-code">
+                <span is="" class="console-object console-object-preview" tabindex="-1"
+                  ><span is="" class="object-description">Window&nbsp;</span
+                  ><span is="" class="object-properties-preview"
+                    >{<span is="" class="name">postMessage</span>: <span is="" class="object-value-function">ƒ</span>,
+                    <span is="" class="name">blur</span>: <span is="" class="object-value-function">ƒ</span>,
+                    <span is="" class="name">focus</span>: <span is="" class="object-value-function">ƒ</span>,
+                    <span is="" class="name">close</span>: <span is="" class="object-value-function">ƒ</span>,
+                    <span is="" class="name">parent</span>: <span is="" class="object-value-object">Window</span
+                    ><span is="">,&nbsp;…</span>}</span
+                  ><span is="" class="object-state-note info-note"></span
+                ></span></div></span
+          ></span>
+        </div>
+      </div>
+    </div>
+    <div is="" aria-hidden="true" style="height: 0px; color: transparent;"></div>
+    <div is="" class="source-code" id="console-prompt">
+      <span
+        is="ui-icon"
+        class="console-prompt-icon spritesheet-smallicons smallicon-text-prompt"
+        style="--spritesheet-position:-80px 90px; width: 10px; height: 10px;"
+      ></span>
+      <div is="" class="widget">
+        <style is="" type="text/css" src="css/consolePrompt.css"></style>
+        <div is="" class="widget vbox" style="overflow: hidden;" tabindex="-1">
+          <style is="" type="text/css" src="css/codemirror.css"></style>
+          <style is="" type="text/css" src="css/cmdevtools.css"></style>
+          <div class="CodeMirror cm-s-default CodeMirror-wrap source-code fill" style="height: auto; width: 660px;">
+            <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 3px; left: 4px;">
+              <textarea
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-label="Code editor"
+                tabindex="0"
+                style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"
+              ></textarea>
+            </div>
+            <div
+              class="CodeMirror-vscrollbar"
+              tabindex="-1"
+              cm-not-content="true"
+              style="width: 18px; pointer-events: none;"
+            >
+              <div style="min-width: 1px; height: 0px;"></div>
+            </div>
+            <div
+              class="CodeMirror-hscrollbar"
+              tabindex="-1"
+              cm-not-content="true"
+              style="height: 18px; pointer-events: none;"
+            >
+              <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+            </div>
+            <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+            <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+            <div class="CodeMirror-scroll" tabindex="-1">
+              <div
+                class="CodeMirror-sizer"
+                style="margin-left: 0px; margin-bottom: 0px; border-right-width: 30px; min-height: 17px; padding-right: 0px; padding-bottom: 0px;"
+              >
+                <div style="position: relative; top: 0px;">
+                  <div class="CodeMirror-lines" role="presentation">
+                    <div role="presentation" style="position: relative; outline: none;">
+                      <div class="CodeMirror-measure">
+                        <span><span>​</span>x</span>
+                      </div>
+                      <div class="CodeMirror-measure"></div>
+                      <div style="position: relative; z-index: 1;"></div>
+                      <div class="CodeMirror-cursors" style="visibility: hidden;">
+                        <div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 13px;">&nbsp;</div>
+                      </div>
+                      <div class="CodeMirror-code" role="presentation">
+                        <div class="CodeMirror-activeline" style="position: relative;">
+                          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                          <div
+                            class="CodeMirror-gutter-background CodeMirror-activeline-gutter"
+                            style="left: 0px; width: 0px;"
+                          ></div>
+                          <pre
+                            class=" CodeMirror-line "
+                            role="presentation"
+                          ><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent; top: 17px;"
+              ></div>
+              <div class="CodeMirror-gutters" style="display: none; height: 47px;"></div>
+            </div>
+          </div>
+        </div>
+        <div is="" class="console-eager-preview">
+          <div is="" class="console-eager-inner-preview"></div>
+          <span
+            is="ui-icon"
+            class="preview-result-icon spritesheet-smallicons smallicon-command-result"
+            style="--spritesheet-position:0px 70px; width: 10px; height: 10px;"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <div is="" class="console-view-fix-select-all" aria-hidden="true">.</div>
+  </div>
+  <!-- Messages -->
+</div>
+<!-- Main Panel -->
+<!-- DevTools -->
