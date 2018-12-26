@@ -1,0 +1,32 @@
+/* The following styles are dynamically appended by chrome-devtools://devtools/bundled/text_editor/text_editor_module.js */
+
+.CodeMirror {
+  --inactive-fill: rgba(196, 196, 196, 0.6); /* inactiveBackgroundColor */
+  --inactive-text: #000000; /* inactiveForegroundColor */
+  --selection-fill: rgba(128, 188, 254, 0.6); /* backgroundColor */
+  --selection-text: #000000; /* foregroundColor */
+}
+.CodeMirror .CodeMirror-selected {
+  background-color: var(--inactive-fill, rgba(196, 196, 196, 0.6));
+}
+
+.CodeMirror .CodeMirror-selectedtext:not(.CodeMirror-persist-highlight) {
+  color: var(--inactive-text, #000000) !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: var(--selection-fill, rgba(128, 188, 254, 0.6));
+}
+
+.CodeMirror-focused .CodeMirror-selectedtext:not(.CodeMirror-persist-highlight) {
+  color: var(--selection-text, #000000) !important;
+}
+
+.CodeMirror .CodeMirror-line::selection,
+.CodeMirror .CodeMirror-line > span::selection,
+.CodeMirror .CodeMirror-line > span > span::selection {
+  background: var(--selection-fill, rgba(128, 188, 254, 0.6));
+  color: var(--selection-text, #000000) !important;
+}
+
+/*# sourceURL=chrome-devtools://devtools/bundled/text_editor/text_editor_module.js */
