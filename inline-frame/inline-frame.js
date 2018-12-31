@@ -1,5 +1,3 @@
-import {html} from '../lib/helpers.js';
-
 export class InlineFrameElement extends HTMLElement {
   constructor() {
     super();
@@ -37,7 +35,7 @@ export class InlineFrameElement extends HTMLElement {
 
   attributeChangedCallback(attributeName, previousValue, nextValue) {
     previousValue === nextValue || (this[attributeName] = nextValue);
-    if (previousValue === nextValue) debugger;
+    // if (previousValue === nextValue) debugger;
   }
 }
 
