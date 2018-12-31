@@ -1,0 +1,133 @@
+{
+  "UIEvent": {
+    "(properties)": {
+      "detail": {},
+      "initUIEvent": "function initUIEvent() { [native code] }",
+      "sourceCapabilities": {},
+      "view": {},
+      "which": {}
+    },
+    "CompositionEvent": {
+      "(properties)": {
+        "data": {},
+        "initCompositionEvent": "function initCompositionEvent() { [native code] }"
+      }
+    },
+    "FocusEvent": {
+      "(properties)": {
+        "relatedTarget": {}
+      }
+    },
+    "InputEvent": {
+      "(properties)": {
+        "data": {},
+        "dataTransfer": {},
+        "getTargetRanges": "function getTargetRanges() { [native code] }",
+        "inputType": {},
+        "isComposing": {}
+      }
+    },
+    "KeyboardEvent": {
+      "(properties)": {
+        "DOM_KEY_LOCATION_LEFT": 1,
+        "DOM_KEY_LOCATION_NUMPAD": 3,
+        "DOM_KEY_LOCATION_RIGHT": 2,
+        "DOM_KEY_LOCATION_STANDARD": 0,
+        "altKey": {},
+        "charCode": {},
+        "code": {},
+        "ctrlKey": {},
+        "getModifierState": "function getModifierState() { [native code] }",
+        "initKeyboardEvent": "function initKeyboardEvent() { [native code] }",
+        "isComposing": {},
+        "key": {},
+        "keyCode": {},
+        "location": {},
+        "metaKey": {},
+        "repeat": {},
+        "shiftKey": {}
+      }
+    },
+    "MouseEvent": {
+      "(properties)": {
+        "altKey": {},
+        "button": {},
+        "buttons": {},
+        "clientX": {},
+        "clientY": {},
+        "ctrlKey": {},
+        "fromElement": {},
+        "getModifierState": "function getModifierState() { [native code] }",
+        "initMouseEvent": "function initMouseEvent() { [native code] }",
+        "layerX": {},
+        "layerY": {},
+        "metaKey": {},
+        "movementX": {},
+        "movementY": {},
+        "offsetX": {},
+        "offsetY": {},
+        "pageX": {},
+        "pageY": {},
+        "region": {},
+        "relatedTarget": {},
+        "screenX": {},
+        "screenY": {},
+        "shiftKey": {},
+        "toElement": {},
+        "x": {},
+        "y": {}
+      },
+      "DragEvent": {
+        "(properties)": {
+          "dataTransfer": {}
+        }
+      },
+      "PointerEvent": {
+        "(properties)": {
+          "getCoalescedEvents": "function getCoalescedEvents() { [native code] }",
+          "height": {},
+          "isPrimary": {},
+          "pointerId": {},
+          "pointerType": {},
+          "pressure": {},
+          "tangentialPressure": {},
+          "tiltX": {},
+          "tiltY": {},
+          "twist": {},
+          "width": {}
+        }
+      },
+      "WheelEvent": {
+        "(properties)": {
+          "DOM_DELTA_LINE": 1,
+          "DOM_DELTA_PAGE": 2,
+          "DOM_DELTA_PIXEL": 0,
+          "deltaMode": {},
+          "deltaX": {},
+          "deltaY": {},
+          "deltaZ": {},
+          "wheelDelta": {},
+          "wheelDeltaX": {},
+          "wheelDeltaY": {}
+        }
+      }
+    },
+    "TextEvent": {
+      "(properties)": {
+        "data": {},
+        "initTextEvent": "function initTextEvent() { [native code] }"
+      }
+    },
+    "TouchEvent": {
+      "(properties)": {
+        "altKey": {},
+        "changedTouches": {},
+        "ctrlKey": {},
+        "metaKey": {},
+        "shiftKey": {},
+        "targetTouches": {},
+        "touches": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "UIEvent": {
+    "(properties)": {
+      "detail": {},
+      "initUIEvent": "function initUIEvent() {\n    [native code]\n}",
+      "layerX": {},
+      "layerY": {},
+      "pageX": {},
+      "pageY": {},
+      "view": {},
+      "which": {}
+    },
+    "CompositionEvent": {
+      "(properties)": {
+        "data": {},
+        "initCompositionEvent": "function initCompositionEvent() {\n    [native code]\n}"
+      }
+    },
+    "FocusEvent": {
+      "(properties)": {
+        "relatedTarget": {}
+      }
+    },
+    "GestureEvent": {
+      "(properties)": {
+        "altKey": {},
+        "clientX": {},
+        "clientY": {},
+        "ctrlKey": {},
+        "initGestureEvent": "function initGestureEvent() {\n    [native code]\n}",
+        "metaKey": {},
+        "rotation": {},
+        "scale": {},
+        "screenX": {},
+        "screenY": {},
+        "shiftKey": {},
+        "target": {}
+      }
+    },
+    "InputEvent": {
+      "(properties)": {
+        "data": {},
+        "dataTransfer": {},
+        "getTargetRanges": "function getTargetRanges() {\n    [native code]\n}",
+        "inputType": {}
+      }
+    },
+    "KeyboardEvent": {
+      "(properties)": {
+        "DOM_KEY_LOCATION_LEFT": 1,
+        "DOM_KEY_LOCATION_NUMPAD": 3,
+        "DOM_KEY_LOCATION_RIGHT": 2,
+        "DOM_KEY_LOCATION_STANDARD": 0,
+        "altGraphKey": {},
+        "altKey": {},
+        "charCode": {},
+        "code": {},
+        "ctrlKey": {},
+        "getModifierState": "function getModifierState() {\n    [native code]\n}",
+        "initKeyboardEvent": "function initKeyboardEvent() {\n    [native code]\n}",
+        "isComposing": {},
+        "key": {},
+        "keyCode": {},
+        "keyIdentifier": {},
+        "keyLocation": {},
+        "location": {},
+        "metaKey": {},
+        "repeat": {},
+        "shiftKey": {},
+        "which": {}
+      }
+    },
+    "MouseEvent": {
+      "(properties)": {
+        "WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN": 2,
+        "WEBKIT_FORCE_AT_MOUSE_DOWN": 1,
+        "altKey": {},
+        "button": {},
+        "buttons": {},
+        "clientX": {},
+        "clientY": {},
+        "ctrlKey": {},
+        "dataTransfer": {},
+        "fromElement": {},
+        "getModifierState": "function getModifierState() {\n    [native code]\n}",
+        "initMouseEvent": "function initMouseEvent() {\n    [native code]\n}",
+        "metaKey": {},
+        "movementX": {},
+        "movementY": {},
+        "offsetX": {},
+        "offsetY": {},
+        "relatedTarget": {},
+        "screenX": {},
+        "screenY": {},
+        "shiftKey": {},
+        "toElement": {},
+        "webkitForce": {},
+        "x": {},
+        "y": {}
+      },
+      "PointerEvent": {
+        "(properties)": {
+          "height": {},
+          "isPrimary": {},
+          "pointerId": {},
+          "pointerType": {},
+          "pressure": {},
+          "tangentialPressure": {},
+          "tiltX": {},
+          "tiltY": {},
+          "twist": {},
+          "width": {}
+        }
+      },
+      "WheelEvent": {
+        "(properties)": {
+          "DOM_DELTA_LINE": 1,
+          "DOM_DELTA_PAGE": 2,
+          "DOM_DELTA_PIXEL": 0,
+          "deltaMode": {},
+          "deltaX": {},
+          "deltaY": {},
+          "deltaZ": {},
+          "initWebKitWheelEvent": "function initWebKitWheelEvent() {\n    [native code]\n}",
+          "webkitDirectionInvertedFromDevice": {},
+          "wheelDelta": {},
+          "wheelDeltaX": {},
+          "wheelDeltaY": {}
+        }
+      }
+    },
+    "SVGZoomEvent": {
+      "(properties)": {
+        "newScale": {},
+        "newTranslate": {},
+        "previousScale": {},
+        "previousTranslate": {},
+        "zoomRectScreen": {}
+      }
+    },
+    "TextEvent": {
+      "(properties)": {
+        "data": {},
+        "initTextEvent": "function initTextEvent() {\n    [native code]\n}"
+      }
+    }
+  }
+}
