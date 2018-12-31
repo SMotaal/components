@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "@smotaal/components",
+  "description": "TBD",
+  "version": "0.0.0",
+  "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "exports": {},
+  "scripts": {
+    "start": "npx -q http-server --cors",
+    "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
+    "compile": "rollup -c",
+    "nes": "~/Projects/@smotaal/node/node-esm/out/Release/node"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "prettier": "latest",
+    "rollup": "latest",
+    "typescript": "latest"
+  },
+  "resolutions": {
+    "pseudom": "./packages/pseudom"
+  },
+  "workspaces": {
+    "packages": [
+      "code-editor",
+      "packages/fragma",
+      "packages/pseudom"
+    ]
+  }
+}
