@@ -1,0 +1,23 @@
+:host {
+  --code-theme-font-size: 24px;
+}
+
+:host > * {
+  outline: 1px solid #ff09;
+}
+
+* {
+  outline: 1px solid #0f66;
+}
+
+::slotted(*)::before {
+  outline: 1px dotted #06f6;
+}
+
+::slotted(*)::after {
+  outline: 1px dotted #f606;
+}
+
+/* :host > * {
+  pointer-events: none;
+} */

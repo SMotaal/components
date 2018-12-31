@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "displayName": "<code-editor> Element",
   "description": "A CodeFlask inspired code editor custom element",
-  "custom-element": "code-editor-element.js",
+  "custom-element": "code-editor.js",
   "license": "MIT",
   "exports": {
     "./": "code-editor.js"

@@ -1,0 +1,160 @@
+:host {
+  /* display: flex !important; */
+  /* flex-flow: row !important; */
+  height: -moz-available;
+  height: -webkit-fill-available;
+  box-sizing: content-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#wrapper {
+  min-height: 100%;
+  /* height: 100%; */
+  width: 100%;
+  /* flex: 1 1 100%; */
+  box-sizing: content-box;
+
+  position: relative;
+
+  background-color: var(--code-gutter-background-color);
+}
+
+#content {
+  color: var(--code-text-color);
+
+  background-color: var(--code-background-color);
+
+  font-size: var(--code-font-size);
+  font-family: var(--code-font-family, monospace);
+
+  tab-size: var(--tab-size, 4);
+
+  min-height: 100%;
+
+  /* user-select: text; */
+}
+
+/* #wrapper.grid */
+:host(.wrapper-grid) #wrapper {
+  display: grid;
+  grid-template: 'content' auto / auto;
+}
+
+/* #wrapper.grid > #content */
+:host(.wrapper-grid) #wrapper > #content {
+  grid-area: content;
+}
+
+/* .line-numbers #content  */
+:host(.line-numbers) #content {
+  margin-left: var(--code-gutter-width);
+}
+
+/* #content.grid */
+:host(.content-grid) #content {
+  display: grid;
+  grid-template:
+    'code'
+    auto / auto;
+}
+
+:host(code-editor) {
+  /* Theme/Default Properties */
+  --code-font-family: var(--code-theme-font-family, var(--code-default-font-family, monospace));
+  --code-font-size: var(--code-theme-font-size, var(--code-default-font-size, 13px));
+
+  --code-background-color: var(
+    --code-theme-background-color,
+    var(--code-default-background-color, #fff)
+  );
+  --code-text-color: var(--code-theme-text-color, var(--code-default-text-color, #559));
+
+  --code-gutter-background-color: var(
+    --code-theme-gutter-background-color,
+    var(--code-default-gutter-background-color, #9993)
+  );
+  --code-gutter-text-color: var(
+    --code-theme-gutter-text-color,
+    var(--code-default-gutter-text-color, #000)
+  );
+
+  /* Derived Properties */
+  --code-line-height: var(--code-theme-line-height, calc(var(--code-font-size, 13px) * 1.5));
+  --code-inset: var(--code-theme-inset, 0.5ch);
+
+  --code-gutter-width: var(--code-theme-gutter-width, 4em);
+  --code-gutter-font-size: var(--code-theme-gutter-font-size, var(--code-font-size));
+  --code-gutter-line-height: var(--code-line-height);
+  --code-gutter-inset: var(--code-theme-gutter-inset, var(--code-inset));
+
+  --code-first-line-number: 1;
+
+  --code-punctuation-color: var(--code-theme-punctuation-color, currentcolor);
+  --code-keyword-color: var(--code-theme-keyword-color, currentcolor);
+  --code-operator-color: var(--code-theme-operator-color, currentcolor);
+  --code-string-color: var(--code-theme-string-color, currentcolor);
+  --code-comment-color: var(--code-theme-comment-color, currentcolor);
+  --code-function-color: var(--code-theme-function-color, currentcolor);
+  --code-boolean-color: var(--code-theme-boolean-color, currentcolor);
+  --code-number-color: var(--code-theme-number-color, currentcolor);
+  --code-selector-color: var(--code-theme-selector-color, currentcolor);
+  --code-property-color: var(--code-theme-property-color, currentcolor);
+  --code-tag-color: var(--code-theme-tag-color, currentcolor);
+  --code-attr-value-color: var(--code-theme-attr-value-color, currentcolor);
+
+  color: var(--code-text-color);
+  font-size: var(--code-font-size);
+  font-family: var(--code-font-family);
+  line-height: var(--code-line-height);
+}
+
+/* Theme */
+
+#code .token.punctuation {
+  color: var(--code-punctuation-color);
+}
+
+#code .token.keyword {
+  color: var(--code-keyword-color);
+}
+
+#code .token.operator {
+  color: var(--code-operator-color);
+}
+
+#code .token.string {
+  color: var(--code-string-color);
+}
+
+#code .token.comment {
+  color: var(--code-comment-color);
+}
+
+#code .token.function {
+  color: var(--code-function-color);
+}
+
+#code .token.boolean {
+  color: var(--code-boolean-color);
+}
+
+#code .token.number {
+  color: var(--code-number-color);
+}
+
+#code .token.selector {
+  color: var(--code-selector-color);
+}
+
+#code .token.property {
+  color: var(--code-property-color);
+}
+
+#code .token.tag {
+  color: var(--code-tag-color);
+}
+
+#code .token.attr-value {
+  color: var(--code-attr-value-color);
+}

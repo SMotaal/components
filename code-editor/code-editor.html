@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SMotaal's Modules</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="../styles/frame.css" />
+    <style>
+      :not(:defined) {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 75vh;display: grid;overflow: hidden;">
+      <code-editor
+        linenumbers
+        no-wrapper-grid
+        no-content-grid
+        class="before-code after-code indent-code"
+        ><pre>import {html, Toggle, Attributes, Component} from './helpers.js';</pre>
+        <pre>import {EditorCommands} from './editor-commands.js';</pre>
+        <pre>const START_OF_TEXT = '\x02';</pre>
+        <pre>const CARRIAGE_RETURN = '\x0D';</pre>
+        <pre>const LINE_FEED = '\x0A';</pre>
+        <pre>const START_OF_CONTENT = START_OF_TEXT;</pre></code-editor
+      >
+    </div>
+    <script type="module">
+      import './code-editor.js';
+      // import('./code-editor.js');
+    </script>
+  </body>
+</html>

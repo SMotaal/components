@@ -13,4 +13,10 @@ _Additional Guidelines_
 - Extensibility…
 - Polyfilling…
 
+```html
+<html>
+  <body></body>
+</html>
+```
+
 [code-flask]: https://kazzkiq.github.io/CodeFlask/ 'A micro code-editor for awesome web pages.'

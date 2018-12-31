@@ -1,0 +1,51 @@
+:host, :root {
+  --code-theme-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  /* Avoid relative font-sizes */
+  --code-theme-font-size: 13px;
+
+  --code-theme-background-color: #fff;
+  --code-theme-text-color: #559;
+
+  --code-theme-gutter-color: #9993;
+  --code-theme-gutter-text-color: #000;
+
+  --code-theme-punctuation-color: #555;
+  --code-theme-keyword-color: #80F;
+  --code-theme-operator-color: #F5A;
+  --code-theme-string-color: #4B9;
+  --code-theme-comment-color: #ABB;
+  --code-theme-function-color: #80F;
+  --code-theme-boolean-color: #80F;
+  --code-theme-number-color: #80F;
+  --code-theme-selector-color: #80F;
+  --code-theme-property-color: #80F;
+  --code-theme-tag-color: #80F;
+  --code-theme-attr-value-color: #80F;
+
+}
+
+:root {
+  --code-default-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --code-default-font-size: 13px;
+
+  --code-default-background-color: #fff;
+  --code-default-text-color: #559;
+
+  --code-default-gutter-color: #9993;
+  --code-default-gutter-text-color: #000;
+
+  /* --code-default-punctuation-color: #555; */
+  /* --code-default-keyword-color: #80F; */
+  /* --code-default-operator-color: #F5A; */
+  /* --code-default-string-color: #4B9; */
+  /* --code-default-comment-color: #ABB; */
+  /* --code-default-function-color: #80F; */
+  /* --code-default-boolean-color: #80F; */
+  /* --code-default-number-color: #80F; */
+  /* --code-default-selector-color: #80F; */
+  /* --code-default-property-color: #80F; */
+  /* --code-default-tag-color: #80F; */
+  /* --code-default-attr-value-color: #80F; */
+
+}
