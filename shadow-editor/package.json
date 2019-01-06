@@ -1,0 +1,11 @@
+{
+  "name": "@smotaal/shadow-editor-element",
+  "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "version": "0.0.0",
+  "custom-element": "shadow-editor.js",
+  "main": "shadow-editor-element.html",
+  "license": "MIT",
+  "exports": {
+    "./": "shadow-editor.js"
+  }
+}

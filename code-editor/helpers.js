@@ -1,6 +1,10 @@
-/// <reference path="./types.d.ts" />
+// export * from '../code-elements/lib/helpers.js';
 
-export * from '../lib/helpers.js';
+// export * from '../../lib/globals.js';
+export * from '../../lib/templates.js';
+export * from '../../lib/events.js';
+export * from '../../lib/attributes.js';
+// export * from '../../lib/expressions.js';
 
 export const hasOwnProperty = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -109,7 +113,7 @@ export class Component extends HTMLElement {
   }
 
   static set observedAttributes(value) {
-    this === CodeEditor || updateProperty(this, 'observedAttributes', value);
+    this === Component || updateProperty(this, 'observedAttributes', value);
   }
 
   /** @type {{mode: 'open' | 'closed'} | undefined} */
@@ -200,30 +204,3 @@ export class Component extends HTMLElement {
         : console.trace(`${span} %O`, context, detail, ...args));
   }
 }
-
-// /**
-//  * @template {{[name: K]?}} T
-//  * @template {string} K
-//  * @param  {...Array<K> | T} attributes
-//  * @returns {Array<K & keyof T> & T}
-//  */
-// export const Attributes = (...attributes) => {
-//   const names = new Set();
-//   const defaults = {
-//     [Symbol.toStringTag]: 'Attributes',
-//     [Symbol.isConcatSpreadable]: false,
-//   };
-
-//   for (const object of attributes) {
-//     for (const name of Symbol.iterator in object ? object : Object.getOwnPropertyNames(object)) {
-//       typeof name !== 'string' ||
-//         (names.has(name)
-//           ? // Assign to undefined default
-//             defaults[name] === undefined || (defaults[name] = object[name])
-//           : // Add name to the set of names and initialize default
-//             (defaults[name] = (names.add(name), name in object || (undefined && object[name]))));
-//     }
-//   }
-
-//   return Object.assign([...names], defaults);
-// };

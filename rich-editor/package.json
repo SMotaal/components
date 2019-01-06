@@ -1,0 +1,13 @@
+{
+  "name": "@smotaal/rich-editor-element",
+  "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "version": "0.0.0",
+  "displayName": "<rich-editor> Element",
+  "description": "A rich editor custom element (based on dev.mozilla.org/web/guide/html/editable_content)",
+  "custom-element": "rich-editor.js",
+  "main": "rich-editor-element.html",
+  "license": "MIT",
+  "exports": {
+    "./": "rich-editor.js"
+  }
+}

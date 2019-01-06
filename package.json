@@ -6,7 +6,8 @@
   "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
   "exports": {},
   "scripts": {
-    "start": "npx -q http-server --cors",
+    "serve": "npx -q http-server --cors",
+    "start": "node start.js",
     "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
     "compile": "rollup -c",
     "nes": "~/Projects/@smotaal/node/node-esm/out/Release/node"
@@ -16,6 +17,9 @@
     "prettier": "latest",
     "rollup": "latest",
     "typescript": "latest"
+  },
+  "peerDependencies": {
+    "carlo": "*"
   },
   "resolutions": {
     "pseudom": "./packages/pseudom"

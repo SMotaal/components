@@ -11,3 +11,6 @@ declare global {
     once: boolean;
   }
 }
+
+
+type Extends<U, T> = U extends T ? true : false;

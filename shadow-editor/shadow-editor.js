@@ -1,4 +1,4 @@
-import {html, template} from '../lib/helpers.js';
+import {html} from '../lib/helpers.js';
 import {EditorEvents, EditorHostEvents, FocusEvents} from './mappings.js';
 
 const {assign, defineProperty} = Object;
