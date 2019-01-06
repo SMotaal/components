@@ -1,5 +1,3 @@
-'use strict';
-
 import {html, Toggle, Attributes, Component, EventListener} from './helpers.js';
 import {EditorCommands} from './editor-commands.js';
 
@@ -60,6 +58,18 @@ export class CodeEditor extends Component {
       EventListener.Passive,
     );
 
+    // this['#outlines'] && (this.onToggleOutlines = EventListener.create(
+    //     /** @type {HTMLInputElement} */
+    //     this['#outlines'],
+    //     '	change',
+    //     event => {
+    //       this['#outlines'].checked
+    //         ? this.classList.add('outlines')
+    //         : this.classList.remove('outlines');
+    //     },
+    //     EventListener.Passive,
+    //   ));
+
     // this['#code'].style.pointerEvents = 'none';
 
     // slot.addEventListener('slotchange', event => onSlotChange.call(this, event), Passive)
@@ -81,6 +91,38 @@ export class CodeEditor extends Component {
     this.contentEditable = true;
     // this['#textarea'] = this;
     super.initializeAttributes();
+
+    setTimeout(() => {
+      this['#enable-outlines'] &&
+        ((this['#enable-outlines'].checked = this.classList.contains('outlines')),
+        this['#enable-outlines'].addEventListener('change', event => {
+          this['#enable-outlines'].checked
+            ? this.classList.add('outlines')
+            : this.classList.remove('outlines');
+        }));
+
+      this['#enable-autocorrect'] &&
+        ((this['#enable-autocorrect'].checked = this.getAttribute('autocorrect')),
+        this['#enable-autocorrect'].addEventListener('change', event => {
+          this['#enable-autocorrect'].checked
+            ? this.updateAutoCorrect('true')
+            : this.updateAutoCorrect('false');
+        }));
+
+      this['#enable-linenumbers'] &&
+        ((this['#enable-linenumbers'].checked = this.hasAttribute('linenumbers')),
+        this['#enable-linenumbers'].addEventListener(
+          'change',
+          event => void this.updateLineNumbers(this['#enable-linenumbers'].checked),
+        ));
+
+      this['#enable-wraplines'] &&
+        ((this['#enable-wraplines'].checked = this.hasAttribute('wraplines')),
+        this['#enable-wraplines'].addEventListener(
+          'change',
+          event => void this.updateWrapLines(this['#enable-wraplines'].checked),
+        ));
+    });
   }
 
   /**
@@ -96,6 +138,9 @@ export class CodeEditor extends Component {
       case 'linenumbers':
         this.updateLineNumbers(...values);
         break;
+      case 'wraplines':
+        this.updateWrapLines(...values);
+        break;
       case 'tabsize':
         this.updateTabSize(...values);
         break;
@@ -105,9 +150,9 @@ export class CodeEditor extends Component {
       // case 'readonly':
       //   this.updateReadonly(...values);
       //   break;
-      // case 'autocorrect':
-      //   this.updateAutoCorrect(...values);
-      //   break;
+      case 'autocorrect':
+        this.updateAutoCorrect(...values);
+        break;
     }
   }
 
@@ -263,6 +308,12 @@ export class CodeEditor extends Component {
     const classList = this.classList;
     classList && (newValue ? classList.add('line-numbers') : classList.remove('line-numbers'));
   }
+  /** @param {boolean} newValue */
+  updateWrapLines(newValue, oldValue) {
+    newValue = newValue === '' || Toggle(newValue);
+    const classList = this.classList;
+    classList && (newValue ? classList.add('wrap-lines') : classList.remove('wrap-lines'));
+  }
 
   /** @param {boolean} newValue */
   updateReadonly(newValue, oldValue) {
@@ -274,13 +325,17 @@ export class CodeEditor extends Component {
 
   /** @param {boolean} newValue */
   updateAutoCorrect(newValue, oldValue) {
-    this['#textarea'] &&
-      Object.assign(this['#textarea'], {
-        spellcheck: (newValue = newValue === '' || Toggle(newValue)),
-        autocapitalize: newValue,
-        autocomplete: newValue,
-        autocorrect: newValue,
-      });
+    this.getAttribute('autocorrect') === newValue || this.setAttribute('autocorrect', newValue);
+    this.setAttribute('spellcheck', (newValue = newValue === '' || Toggle(newValue)));
+    this.setAttribute('autocapitalize', newValue);
+    this.setAttribute('autocomplete', newValue);
+    // this['#textarea'] &&
+    //   Object.assign(this['#textarea'], {
+    //     spellcheck: (newValue = newValue === '' || Toggle(newValue)),
+    //     autocapitalize: newValue,
+    //     autocomplete: newValue,
+    //     autocorrect: newValue,
+    //   });
   }
 
   /** @param {tabsize} newValue */
@@ -304,6 +359,15 @@ try {
       @import '${local('./code.css')}';
       @import '${local('./overload.css')}';
     </style>
+    <div id="options">
+      <details>
+        <summary>Options</summary>
+        <label><input id="enable-outlines" type="checkbox" />outlines</label>
+        <label><input id="enable-autocorrect" type="checkbox" />autocorrect</label>
+        <label><input id="enable-linenumbers" type="checkbox" />linenumbers</label>
+        <label><input id="enable-wraplines" type="checkbox" />wrap-lines</label>
+      </details>
+    </div>
     <div id="wrapper">
       <div id="content"><slot id="code" class="indent"></slot></div>
     </div>

@@ -2,20 +2,82 @@
   --code-theme-font-size: 24px;
 }
 
-:host > * {
+:host(.outlines) > * {
   outline: 1px solid #ff09;
 }
 
-* {
+:host(.outlines) > #wrapper * {
   outline: 1px solid #0f66;
 }
 
-::slotted(*)::before {
+:host(.outlines) > #wrapper ::slotted(*)::before {
   outline: 1px dotted #06f6;
 }
 
-::slotted(*)::after {
+:host(.outlines) > #wrapper ::slotted(*)::after {
   outline: 1px dotted #f606;
+}
+
+:host > #wrapper {
+  /* backdrop-filter: blur(10px); */
+}
+
+:host > #options {
+  /* all: reset; */
+  background-color: var(--code-gutter-background-color, #9999);
+  color: var(--code-gutter-text-color, black);
+  backdrop-filter: blur(10px) contrast(0.95);
+  z-index: 1;
+  position: sticky;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  /* height: 0; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  /* padding: 0 14px; */
+  /* flex: 0 0 0; */
+}
+
+:host > #options > details {
+  padding: 0 14px;
+  display: grid;
+  column-count: auto;
+  /* background-color: var(--code-gutter-background-color, #9999); */
+  /* background: #9999 !important; */
+  /* backdrop-filter: blur(10px) contrast(0.95); */
+
+  font-size: 14px;
+  line-height: 22px;
+  border-top: 1px ridge #fffa;
+  border-bottom: 1px ridge #999a;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+:host > #options + #wrapper > #content {
+  /* padding-top: 16px; */
+}
+
+:host > #options > details label {
+  white-space: nowrap;
+}
+
+:host > #options > details > :not(summary) {
+  margin: 4px 24px;
+}
+
+:host > #options > details > summary:focus {
+  outline: none;
 }
 
 /* :host > * {

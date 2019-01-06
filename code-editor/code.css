@@ -17,7 +17,7 @@ slot#code::slotted(*) {
   /* font-size: var(--code-font-size); */
   /* font-family: var(--code-font-family); */
   line-height: var(--code-line-height);
-  white-space: pre-wrap;
+  white-space: pre;
   /* text-align: right; */
 
   position: relative;
@@ -58,7 +58,7 @@ slot#code::slotted(*) {
 
 /* slot#code::slotted(*)::before */
 :host(.before-code) slot#code::slotted(*)::before {
-  /* content: ''; */
+  content: '';
   /* text-align: right; */
 
   display: block;
@@ -76,4 +76,7 @@ slot#code::slotted(*) {
   left: calc(-1 * var(--code-gutter-width));
   right: 100%;
   padding: 0 var(--code-gutter-inset);
+  /* position: sticky; */
+  /* left:0; */
+  /* width: var(--code-gutter-width); */
 }

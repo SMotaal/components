@@ -1,37 +1,106 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SMotaal's Modules</title>
+    <title>SMotaal's &lt;code-editor&gt; demo</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
     />
-    <link rel="stylesheet" href="../styles/frame.css" />
+    <!-- <link rel="stylesheet" href="../styles/frame.css" /> -->
     <style>
       :not(:defined) {
         display: none;
       }
+      :root {
+        --checker-size: var(--pattern-size, 40px);
+        --checkerboard: linear-gradient(45deg, #6666 25%, transparent 25%)
+            calc(var(--checker-size) * calc(0 + 0.25) + 50%)
+            calc(var(--checker-size) * calc(0 + 0.25) + 50%) / var(--checker-size)
+            var(--checker-size),
+          linear-gradient(-45deg, #6666 25%, transparent 25%)
+            calc(var(--checker-size) * calc(0 + 0.25) + 50%)
+            calc(var(--checker-size) * calc(0.5 + 0.25) + 50%) / var(--checker-size)
+            var(--checker-size),
+          linear-gradient(45deg, transparent 75%, #6666 75%)
+            calc(var(--checker-size) * calc(0.5 + 0.25) + 50%)
+            calc(var(--checker-size) * calc(-0.5 + 0.25) + 50%) / var(--checker-size)
+            var(--checker-size),
+          linear-gradient(-45deg, transparent 75%, #6666 75%)
+            calc(var(--checker-size) * calc(-0.5 + 0.25) + 50%)
+            calc(var(--checker-size) * calc(0 + 0.25) + 50%) / var(--checker-size)
+            var(--checker-size),
+          linear-gradient(#bbb2, #bbb2), var(--pattern-color, transparent);
+      }
+      html {
+        --pattern-size: calc(3px * 8);
+        --pattern-color: white;
+        --pattern-color: #ccc;
+        background: fixed var(--checkerboard);
+        overscroll-behavior: none;
+      }
+
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        width: inherit;
+        height: inherit;
+      }
+
+      body {
+        background-color: #fffa;
+        margin: 0;
+        display: grid;
+        /* grid-auto-rows: auto 10rem; */
+        grid-template: 'main' 'footer' 10rem;
+      }
+
+      main {
+        grid-area: main;
+        display: grid;
+        overflow: hidden;
+        outline: 1px dotted #9999;
+      }
+      footer {
+        grid-area: footer;
+        display: grid;
+        place-items: center;
+      }
+
+      code-editor {
+        contain: strict;
+      }
     </style>
   </head>
   <body>
-    <div style="height: 75vh;display: grid;overflow: hidden;">
+    <main style="">
       <code-editor
         linenumbers
         no-wrapper-grid
         no-content-grid
         class="before-code after-code indent-code"
-        ><pre>import {html, Toggle, Attributes, Component} from './helpers.js';</pre>
-        <pre>import {EditorCommands} from './editor-commands.js';</pre>
-        <pre>const START_OF_TEXT = '\x02';</pre>
-        <pre>const CARRIAGE_RETURN = '\x0D';</pre>
-        <pre>const LINE_FEED = '\x0A';</pre>
-        <pre>const START_OF_CONTENT = START_OF_TEXT;</pre></code-editor
-      >
-    </div>
+      ></code-editor>
+    </main>
+    <footer>This space intentionally blank.</footer>
     <script type="module">
       import './code-editor.js';
-      // import('./code-editor.js');
+
+      async function loadSourceText(src) {
+        const codeEditor = document.querySelector('code-editor');
+        const sourceText = await (await fetch(src)).text();
+        const fragment = document.createDocumentFragment();
+        for (const line of sourceText.split('\n')) {
+          const element = document.createElement('pre');
+          element.textContent = line || '\n';
+          fragment.appendChild(element);
+        }
+        codeEditor.innerHTML = '';
+        codeEditor.appendChild(fragment);
+      }
+
+      loadSourceText('./element.js');
     </script>
   </body>
 </html>
