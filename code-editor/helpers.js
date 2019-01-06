@@ -1,10 +1,10 @@
 // export * from '../code-elements/lib/helpers.js';
 
-// export * from '../../lib/globals.js';
-export * from '../../lib/templates.js';
-export * from '../../lib/events.js';
-export * from '../../lib/attributes.js';
-// export * from '../../lib/expressions.js';
+// export * from '../lib/globals.js';
+export * from '../lib/templates.js';
+export * from '../lib/events.js';
+export * from '../lib/attributes.js';
+// export * from '../lib/expressions.js';
 
 export const hasOwnProperty = Function.call.bind(Object.prototype.hasOwnProperty);
 
