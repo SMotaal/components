@@ -1,0 +1,23 @@
+code-editor {
+  contain: strict;
+}
+
+
+/*
+
+code-editor br::before {
+  content: '\23CE';
+  display: inline-flex;
+  text-align: center;
+  width: 1em;
+}
+
+code-editor code.indent::before {
+  text-align: center;
+  content: '\2192';
+  display: inline-flex;
+  width: 100%;
+  margin-inline-end: -100%;
+}
+
+*/

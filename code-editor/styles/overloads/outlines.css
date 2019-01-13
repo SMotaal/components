@@ -1,0 +1,17 @@
+:host(.outlines) > * {
+  outline: 1px solid #ff09;
+}
+
+:host(.outlines) > * > * {
+  outline: 1px solid #0f66;
+}
+
+/* :host(.outlines) > #wrapper ::slotted(*)::before, */
+:host(.outlines) ::before {
+  outline: 1px dotted #06f6;
+}
+
+/* :host(.outlines) > #wrapper ::slotted(*)::after, */
+:host(.outlines) ::after {
+  outline: 1px dotted #f606;
+}

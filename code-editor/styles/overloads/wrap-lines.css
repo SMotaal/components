@@ -1,0 +1,10 @@
+:host(:not(.wrap-lines)) #wrapper {
+  min-width: max-content;
+}
+:host(.wrap-lines) #content {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+:host(.wrap-lines) slot#code::slotted(*) {
+  white-space: pre-wrap;
+}

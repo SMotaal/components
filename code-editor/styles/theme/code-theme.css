@@ -1,0 +1,23 @@
+:host([theme='default']),
+:host(:not([theme])),
+:host > .default-theme {
+  /* CODE */
+
+  --code-theme-font-family: 'Iosevka-Term';
+
+  /* Avoid relative font-sizes */
+  --code-theme-font-size: 13px;
+
+  --code-theme-background-color: #fff;
+  --code-theme-text-color: #559;
+
+  --code-theme-gutter-background: #f3f3f3aa;
+  --code-theme-gutter-text-color: #000;
+
+  --code-theme-punctuation-color: #555;
+  --code-theme-keyword-color: #80f;
+  --code-theme-operator-color: #f5a;
+  --code-theme-string-color: #4b9;
+  --code-theme-comment-color: #abb;
+  --code-theme-literal-color: #80f;
+}

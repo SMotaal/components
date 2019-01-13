@@ -1,4 +1,4 @@
-import { EditorCommands } from './editor-commands.js';
+import { EditorCommands } from './code-editor-commands.js';
 
 export class EditorCommandsLegacy extends EditorCommands {
   /** @returns {Selection} */

@@ -1,0 +1,72 @@
+:host {
+  /* CODE */
+
+  --code-background-color: var(
+    --code-theme-background-color,
+    var(--code-default-background-color, #fffc)
+  );
+  --code-text-color: var(--code-theme-text-color, var(--code-default-text-color, #559));
+
+  /* GUTTER */
+
+  --code-gutter-background: var(
+    --code-theme-gutter-background,
+    var(--code-default-gutter-background, #ddde)
+  );
+
+  --code-gutter-text-color: var(
+    --code-theme-gutter-text-color,
+    var(--code-default-gutter-text-color, #000)
+  );
+
+  /* TOKENS */
+
+  --code-punctuation-color: var(
+    --code-theme-punctuation-color,
+    var(--code-default-punctuation-color, currentcolor)
+  );
+  --code-keyword-color: var(
+    --code-theme-keyword-color,
+    var(--code-default-keyword-color, currentcolor)
+  );
+  --code-operator-color: var(
+    --code-theme-operator-color,
+    var(--code-default-operator-color, currentcolor)
+  );
+  --code-string-color: var(
+    --code-theme-string-color,
+    var(--code-default-string-color, currentcolor)
+  );
+  --code-comment-color: var(
+    --code-theme-comment-color,
+    var(--code-default-comment-color, currentcolor)
+  );
+  --code-literal-color: var(
+    --code-theme-literal-color,
+    var(--code-default-literal-color, currentcolor)
+  );
+}
+
+code.token.punctuation {
+  color: var(--code-punctuation-color);
+}
+
+code.token.keyword {
+  color: var(--code-keyword-color);
+}
+
+code.token.operator {
+  color: var(--code-operator-color);
+}
+
+code.token.string {
+  color: var(--code-string-color);
+}
+
+code.token.comment {
+  color: var(--code-comment-color);
+}
+
+code.token.literal {
+  color: var(--code-literal-color);
+}

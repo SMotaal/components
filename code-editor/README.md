@@ -1,4 +1,4 @@
-# `<code-editor>` Element
+﻿# `<code-editor>` Element
 
 A [CodeFlask][code-flask] inspired code editor custom element.
 
@@ -20,3 +20,9 @@ _Additional Guidelines_
 ```
 
 [code-flask]: https://kazzkiq.github.io/CodeFlask/ 'A micro code-editor for awesome web pages.'
+
+
+<!--
+https://googlechromelabs.github.io/howto-components/howto-tabs/
+https://github.com/w3c/webcomponents/issues/551
+-->

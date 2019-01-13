@@ -1,0 +1,12 @@
+:host {
+  /* CODE */
+  --code-font-family: var(--code-theme-font-family, var(--code-default-font-family)), monospace;
+
+  --code-font-size: var(--code-theme-font-size, var(--code-default-font-size, 13px));
+
+  --code-line-height: var(--code-theme-line-height, calc(var(--code-font-size) * 2));
+
+  /* GUTTER */
+  --code-gutter-font-size: var(--code-theme-gutter-font-size, var(--code-font-size));
+  --code-gutter-line-height: var(--code-line-height);
+}

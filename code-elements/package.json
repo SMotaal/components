@@ -1,0 +1,13 @@
+{
+  "name": "@smotaal/code-elements",
+  "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "version": "0.0.0",
+  "displayName": "<code-*> Elements",
+  "description": "A CodeFlask inspired code editor custom element",
+  "custom-element": "code-editor.js",
+  "main": "code-editor.html",
+  "license": "MIT",
+  "exports": {
+    "./": "code-editor.js"
+  }
+}

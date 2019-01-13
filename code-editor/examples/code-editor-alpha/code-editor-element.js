@@ -1,5 +1,5 @@
 import {html, Toggle, Attributes, Component, EventListener} from './helpers.js';
-import {EditorCommands} from './editor-commands.js';
+import {EditorCommands} from './code-editor-commands.js';
 
 const START_OF_TEXT = '\x02';
 const CARRIAGE_RETURN = '\x0D';

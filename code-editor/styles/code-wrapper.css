@@ -1,0 +1,14 @@
+:host > #wrapper.source-code {
+  display: grid;
+  /* width: 100%; height: 100%; */
+  /* overflow-x: scroll; overflow-y: scroll; */
+  /* align-self: stretch; */
+  /* width: 100%; */
+  /* height: 100%; */
+  /* min-height: max-content; */
+  flex: 1;
+
+  /* box-sizing: content-box; */
+  /* position: relative; */
+  background-color: var(--code-gutter-background);
+}

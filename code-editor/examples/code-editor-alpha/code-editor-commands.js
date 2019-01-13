@@ -1,4 +1,4 @@
-import { globals } from '../lib/globals.js';
+import {globals} from './helpers.js';
 
 export class EditorCommands {
   static createTextNode(text, document = this.document) {

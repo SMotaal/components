@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html demo checkerboard>
+  <head>
+    <title>SMotaal's &lt;source-view&gt; demo</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+    />
+    <!-- <link rel="stylesheet" href="./styles/code-root.css" /> -->
+    <link rel="stylesheet" href="./styles/demo.css" />
+  </head>
+  <body>
+    <main><source-view style="overflow:scroll"></source-view></main>
+    <footer>This space intentionally blank.</footer>
+    <script type="module">
+      import './elements/source-view.js';
+      import {renderSourceTextFrom, loadSourceTextFrom} from './helpers.js';
+
+      const sourceView = document.querySelector('source-view');
+      if (sourceView) {
+        (async () => {
+          const sourceText = await loadSourceTextFrom('./classes/source-rows.js');
+          sourceView.source = sourceText.repeat(2);
+        })();
+      }
+    </script>
+  </body>
+</html>

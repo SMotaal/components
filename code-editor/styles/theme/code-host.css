@@ -1,0 +1,38 @@
+@import './code-layout.css';
+@import './code-typography.css';
+@import './code-colors.css';
+
+:root {
+  --code-default-font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo;
+  --code-default-font-size: 13px;
+
+  --code-default-background-color: #fff;
+  --code-default-text-color: #559;
+
+  --code-default-gutter-background: #ddda;
+  --code-default-gutter-text-color: #000;
+
+  --code-default-punctuation-color: #555;
+  --code-default-keyword-color: #80f;
+  --code-default-operator-color: #f5a;
+  --code-default-string-color: #4b9;
+  --code-default-comment-color: #abb;
+  --code-default-literal-color: #80f;
+}
+
+:host {
+  --code-first-line-number: 1;
+}
+
+/*
+:matches([hidden], :host([hidden]), slot::slotted([hidden]), :not(:defined)) {
+  display: none;
+}
+ */
+
+/*
+@font-face {
+  font-family: Code;
+  src: local('SFMono-Regular'), local('Consolas'), local('Liberation Mono'), local('Menlo');
+}
+ */

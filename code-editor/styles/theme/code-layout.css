@@ -1,0 +1,10 @@
+:host {
+  /* CODE */
+  --code-inset: var(--code-theme-inset, 0.5ch);
+
+  /* GUTTER */
+  --code-gutter-width: var(--code-theme-gutter-width, 4em);
+  --code-gutter-inset: var(--code-theme-gutter-inset, var(--code-inset));
+
+
+}
