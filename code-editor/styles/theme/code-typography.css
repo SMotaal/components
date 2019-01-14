@@ -1,6 +1,6 @@
 :host {
   /* CODE */
-  --code-font-family: var(--code-theme-font-family, var(--code-default-font-family)), monospace;
+  --code-font: var(--code-theme-font, var(--code-default-font)), monospace;
 
   --code-font-size: var(--code-theme-font-size, var(--code-default-font-size, 13px));
 

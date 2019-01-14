@@ -3,7 +3,7 @@ import {html, css, Component, local, Attributes} from '../helpers.js';
 export const sourceTextStyle = css`
   /* source-text-style */
   font-size: var(--code-font-size);
-  font-family: var(--code-font-family, monospace);
+  font-family: var(--code-font, monospace);
   line-height: var(--code-line-height, 2em);
   tab-size: var(--tab-size, 2);
 `;
@@ -44,6 +44,7 @@ const styles = css`
     text-align: right;
     padding: 0 var(--code-gutter-inset);
 
+    color: var(--code-gutter-text);
     background-color: var(--code-gutter-background);
     user-select: none;
   }
@@ -175,7 +176,7 @@ try {
 
 // export const sourceTextStyle = {
 //   'font-size': 'var(--code-font-size);',
-//   'font-family': 'var(--code-font-family) monospace;',
+//   'font-family': 'var(--code-font) monospace;',
 //   'line-height': 'var(--code-line-height);',
 //   'tab-size': 'var(--tab-size, 2);',
 // };

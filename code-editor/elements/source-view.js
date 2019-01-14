@@ -13,7 +13,7 @@ const styles = css`
 
   :host {
     box-sizing: border-box;
-    background-color: var(--code-background-color);
+    background-color: var(--code-background);
     ${sourceTextStyle}
   }
 
@@ -21,7 +21,8 @@ const styles = css`
     display: grid;
     width: max-content;
     height: max-content;
-    min-width: 100%; min-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   #content {
@@ -52,8 +53,8 @@ const styles = css`
   }
 
   slot#code::slotted(:active) {
-    outline: 0.5px solid #999;
-    background-color: #9993;
+    outline: 0.5px solid #9996;
+    background-color: #9991;
   }
 
 `;

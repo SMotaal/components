@@ -3,21 +3,21 @@
 @import './code-colors.css';
 
 :root {
-  --code-default-font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo;
+  --code-default-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo;
   --code-default-font-size: 13px;
 
-  --code-default-background-color: #fff;
-  --code-default-text-color: #559;
+  --code-default-background: #fff;
+  --code-default-text: #559;
 
   --code-default-gutter-background: #ddda;
-  --code-default-gutter-text-color: #000;
+  --code-default-gutter-text: #000;
 
-  --code-default-punctuation-color: #555;
-  --code-default-keyword-color: #80f;
-  --code-default-operator-color: #f5a;
-  --code-default-string-color: #4b9;
-  --code-default-comment-color: #abb;
-  --code-default-literal-color: #80f;
+  --code-default-punctuation: #555;
+  --code-default-keyword: #80f;
+  --code-default-operator: #f5a;
+  --code-default-string: #4b9;
+  --code-default-comment: #abb;
+  --code-default-literal: #80f;
 }
 
 :host {
