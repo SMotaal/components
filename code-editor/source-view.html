@@ -18,10 +18,17 @@
       import {renderSourceTextFrom, loadSourceTextFrom} from './helpers.js';
 
       const sourceView = document.querySelector('source-view');
+
       if (sourceView) {
         (async () => {
           const sourceText = await loadSourceTextFrom('./classes/source-rows.js');
-          sourceView.source = sourceText.repeat(2);
+
+          const render = (repeat = (location.hash && parseInt(location.hash.slice(1))) || 1) =>
+            (sourceView.source = sourceText.repeat(repeat));
+
+          addEventListener('hashchange', () => location.reload());
+
+          render();
         })();
       }
     </script>
