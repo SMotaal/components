@@ -25,14 +25,15 @@ const styles = css`
   }
 
   #content {
-    color: var(--code-text-color);
-    background-color: var(--code-background-color);
-    counter-reset: line-number var(--code-first-line-number, 1);
+    color: var(--code-text);
+    background-color: var(--code-background);
+    /* counter-reset: line-number var(--code-first-line-number, 1); */
   }
 
   slot#code {
     counter-reset: line-number var(--code-first-line-number, 1);
     --code-wrap-indent: 1em;
+    --code-gutter-inset: 1em;
     white-space: pre;
 
     ${'' && sourceTextStyle}

@@ -23,7 +23,7 @@ const styles = css`
     display: grid;
     grid-template:
       'gutter code'
-      auto / var(--code-gutter-width) auto;
+      auto / calc(2 * var(--code-gutter-inset, 0) + var(--code-gutter-width)) auto;
     grid-gap: 0.5ch;
     counter-increment: line-number;
 
@@ -91,6 +91,7 @@ const styles = css`
   slot#code::slotted(code.indent) {
     --tint: transparent;
     /* border: 0.5px solid transparent; */
+    -webkit-border-end: 0.5px solid #9993;
     border-inline-end: 0.5px solid #9993;
     color: #00f9;
     width: calc(1em * var(--tab-size, 2));
