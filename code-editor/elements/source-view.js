@@ -115,7 +115,7 @@ export class SourceViewElement extends Component {
             } else if (textContent) {
               this.unwrapNodes(node, options);
             } else {
-              node.remove();
+              // node.remove();
             }
           } else if (node.nodeType === ELEMENT_NODE) {
             node.slot = options.slot;
@@ -193,7 +193,7 @@ export class SourceViewElement extends Component {
 }
 
 try {
-  SourceViewElement.shadowRoot = {mode: 'open'};
+  SourceViewElement.shadowRoot = {mode: 'closed'};
 
   SourceViewElement.styles = styles;
 

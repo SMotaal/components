@@ -136,9 +136,11 @@ export class SourceTextElement extends Component {
           const removed = new Set();
           const slotted = new Set();
           for (const node of slot.assignedNodes()) {
-            node.nodeType === ELEMENT_NODE
-              ? ((node.slot = 'code'), slotted.add(node))
-              : (node.remove(), removed.add(node));
+            node.nodeType === ELEMENT_NODE && (node.slot = 'code');
+            // node.nodeType === ELEMENT_NODE ? (node.slot = 'code') : node.remove();
+            // node.nodeType === ELEMENT_NODE
+            //   ? ((node.slot = 'code'), slotted.add(node))
+            //   : (node.remove(), removed.add(node));
           }
           // this.hidden = !this.textContent;
           // console.log({removed: [... removed], slotted: [... slotted]});
@@ -157,7 +159,7 @@ try {
   // const base = `${new URL('./', import.meta.url)}`;
   // const local = specifier => `${new URL(specifier, base)}`;
 
-  SourceTextElement.shadowRoot = {mode: 'open'};
+  SourceTextElement.shadowRoot = {mode: 'closed'};
 
   SourceTextElement.observedAttributes = Attributes.from(['line-number']);
 
