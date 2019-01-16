@@ -5,7 +5,6 @@ const style = css`
     /* contain: style; */
     z-index: 1;
     box-sizing: border-box;
-    position: -webkit-sticky;
     position: sticky;
     top: -1px;
     background-color: #9991;
@@ -20,7 +19,6 @@ const style = css`
     /* border-bottom: 0.5px ridge #999a; */
     background-color: #fff1;
     backdrop-filter: blur(5px) contrast(0.95);
-    position: -webkit-sticky;
     position: sticky;
     top: -1px;
     user-select: none;
