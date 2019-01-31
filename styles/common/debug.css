@@ -1,0 +1,43 @@
+[debug-outline] {
+  outline-color: var(--debug-stroke, #9999);
+}
+
+[debug-outline]:hover {
+  outline-style: dotted;
+  outline-width: 4px;
+  outline-offset: -2px;
+}
+
+[debug-outline]:hover::before {
+  content: 'outline';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+[debug-outline][name]:hover::before {
+  content: attr(name);
+}
+
+:host[debug-outline] {
+  --debug-stroke: #fc0;
+}
+
+:root[debug-outline] {
+  --debug-stroke: #66f;
+}
+
+html[debug-outline] {
+  --debug-stroke: #f33;
+}
+
+body[debug-outline] {
+  --debug-stroke: #3f3;
+  /* background-color: #fff9; */
+}
+
+iframe[debug-outline] {
+  --debug-stroke: #f0f;
+}
