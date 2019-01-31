@@ -1,8 +1,0 @@
-:host > #wrapper.source-code #content {
-  color: var(--code-text-color);
-  background-color: var(--code-background-color);
-  font-size: var(--code-font-size);
-  font-family: var(--code-font-family, monospace);
-  tab-size: var(--tab-size, 2);
-  /* flex: 1 1 100%; */
-}

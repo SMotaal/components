@@ -8,15 +8,19 @@ export const SPAN = 'code';
 export const BLOCK = 'source-text';
 
 const styles = css`
-  @import '${local(`styles/theme/code-theme.css`)}';
-  @import '${local(`styles/theme/code-host.css`)}';
+  /* @import '${local(`styles/theme/code-theme.css`)}'; */
+  /* @import '${local(`styles/theme/code-host.css`)}'; */
+  @import '${local(`elements/source-view.css`)}';
 
   :host {
+    /*
     box-sizing: border-box;
     background-color: var(--code-background);
+    */
     ${sourceTextStyle}
   }
 
+  /*
   #wrapper {
     display: grid;
     width: max-content;
@@ -28,9 +32,10 @@ const styles = css`
   #content {
     color: var(--code-text);
     background-color: var(--code-background);
-    /* counter-reset: line-number var(--code-first-line-number, 1); */
   }
+  */
 
+  /*
   slot#code {
     counter-reset: line-number var(--code-first-line-number, 1);
     --code-wrap-indent: 1em;
@@ -39,7 +44,9 @@ const styles = css`
 
     ${'' && sourceTextStyle}
   }
+  */
 
+  /*
   slot#code::slotted(*) {
     box-sizing: content-box;
     margin: 0;
@@ -56,6 +63,7 @@ const styles = css`
     outline: 0.5px solid #9996;
     background-color: #9991;
   }
+  */
 
 `;
 
@@ -78,14 +86,26 @@ export class SourceViewElement extends Component {
     return (this.sourceView && this.sourceView.source) || undefined;
   }
 
-  updateContent() {
-    /** @type {this & {[name: '::' | '::code']: HTMLSlotElement}} */
+  async updateContent() {
+    /** @type {this & {'::': HTMLSlotElement,'::code': HTMLSlotElement} */
     const {'::code': code, '::': slot = code, ELEMENT_NODE, TEXT_NODE} = this;
     if (!slot) return;
     const options = {slot: code.name};
     const assignedNodes = slot && slot.assignedNodes();
     if (!assignedNodes || !assignedNodes.length) return;
     if (assignedNodes && assignedNodes.length) {
+      // wrapper.style.contain = 'strict';
+      // wrapper.style.height = `${wrapper.clientHeight}px`;
+      // wrapper.style.position = 'absolute';
+      const {parentElement} = code;
+      const placeholder = document.createElement('div');
+      placeholder.style.height = `${code.clientHeight}px`;
+      placeholder.style.width = `${code.clientWidth}px`;
+      placeholder.innerHTML = '&nbsp;';
+      parentElement.insertBefore(placeholder, code);
+      code.remove();
+
+      await new Promise(resolve => setTimeout(resolve, 1));
       const text = [];
       for (let node of assignedNodes) {
         if (node.nodeType === TEXT_NODE) {
@@ -123,6 +143,12 @@ export class SourceViewElement extends Component {
         }
       }
       text.length && this.wrapNodes(text, SPAN, BLOCK, options);
+      setTimeout(() => {
+        parentElement.insertBefore(code, placeholder);
+        placeholder.remove();
+        // parentElement.placeholder
+        // (wrapper.style.height = wrapper.style.contain = parentElement.appendChild(code) && '')
+      }, 100);
     }
     // this.normalize();
     // for (const node of removed) node.remove();

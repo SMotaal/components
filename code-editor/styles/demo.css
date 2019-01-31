@@ -7,6 +7,8 @@ html {
   right: 0;
   left: 0;
   bottom: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -37,6 +39,7 @@ html[demo] > body > main {
   grid-area: main;
   display: grid;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
   /* width: 100%; */
   /* height: 100%; */
   outline: 1px dotted #9999;

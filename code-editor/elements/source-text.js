@@ -15,10 +15,10 @@ export const sourceTextStyleInherit = sourceTextStyle
   .replace('/* source-text-style */', '/* source-text-style-inherit */');
 
 const styles = css`
-  /* @import '${local(`styles/theme/code-theme.css`)}'; */
-  /* @import '${local(`styles/theme/code-host.css`)}'; */
+  @import '${local(`elements/source-text.css`)}';
 
   :host {
+    /*
     white-space: normal;
     display: grid;
     grid-template:
@@ -26,37 +26,37 @@ const styles = css`
       auto / calc(2 * var(--code-gutter-inset, 0) + var(--code-gutter-width)) auto;
     grid-gap: 0.5ch;
     counter-increment: line-number;
-
-    /* outline: none; */
-    /* box-sizing:content-box; */
+    */
 
     ${sourceTextStyle}
   }
 
   :host::after {
+    /*
     content: counter(line-number);
     grid-area: gutter;
 
     display: block;
     left: 0;
-    position: sticky;
-
     text-align: right;
     padding: 0 var(--code-gutter-inset);
 
     color: var(--code-gutter-text);
     background-color: var(--code-gutter-background);
     user-select: none;
+    */
+    position: sticky;
   }
+
+
+  /*
 
   :host(:hover) {
     background-color: #9991;
   }
 
-
   slot#code {
     --float: left;
-    /* --tint: transparent; */
 
     grid-area: code;
     display: block;
@@ -67,12 +67,17 @@ const styles = css`
     --float: right;
   }
 
+  */
+
   slot#code::slotted(*) {
+    /*
     float: var(--float);
+    */
 
     ${sourceTextStyle}
   }
 
+  /*
   slot#code::slotted(*:hover) {
     outline: 1px solid var(--tint, #9993);
     box-shadow: inset 0 0 1px 1em var(--tint, #9993);
@@ -80,7 +85,6 @@ const styles = css`
   }
 
   slot#code::slotted(code) {
-    /* --tint: #0f01; */
     white-space: pre;
     pointer-events: all;
   }
@@ -91,7 +95,6 @@ const styles = css`
 
   slot#code::slotted(code.indent) {
     --tint: transparent;
-    /* border: 0.5px solid transparent; */
     -webkit-border-end: 0.5px solid #9993;
     border-inline-end: 0.5px solid #9993;
     color: #00f9;
@@ -105,9 +108,6 @@ const styles = css`
 
   slot#code::slotted(code:empty) {
     --tint: #f001;
-    /* outline: 1px solid red; */
-    /* display: block; */
-    /* white-space: pre; */
     width: 1em;
     height: var(--code-line-height, 2em);
   }
@@ -120,6 +120,8 @@ const styles = css`
   slot#code::slotted(code:empty:hover) {
     --tint: #f003;
   }
+
+  */
 
 `;
 
