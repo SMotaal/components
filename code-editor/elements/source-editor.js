@@ -1,7 +1,15 @@
-import {html, Toggle} from '../helpers.js';
+import {html, css, Toggle} from '../helpers.js';
 import {SourceViewElement} from './source-view.js';
 
 import './options-view.js';
+
+const style = css`
+  :host {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    /* transform: translateZ(1); */
+  }
+`;
 
 const createToggle = (input, toggle) => {
   if (!input || !toggle) return;
@@ -64,10 +72,7 @@ try {
       <label><input id="use-autocapitalize" type="checkbox" />autocapitalize</label>
     </options-view>
     <style>
-      :host {
-        overflow-x: scroll;
-        overflow-y: scroll;
-      }
+      ${style}
     </style>
   `);
 
