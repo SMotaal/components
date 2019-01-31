@@ -3,22 +3,29 @@
 
 import {TABSIZE} from './indents.js';
 
+const cache = {};
+
 /**
  * @extends {Array<string>}
  */
 export class Lines extends Array {
-  /** @param {Iterable<string>} source */
+  /** @param {string|Iterable<string>} source */
   constructor(source) {
-    const text = typeof source === 'string' && source;
+    const type = (source == null && `${source}`) || typeof source;
+    const text = /** @type {string} */ (type === 'string' && source);
+    const cached = source && cache[source];
     const lines =
+      cached ||
       ((source || source === '') &&
         source[Symbol.iterator] &&
-        (typeof source === 'string' ? source.split('\n') : source)) ||
+        (type === 'string' ? text.split('\n') : source)) ||
       undefined;
 
     lines ? super(...lines) : super();
 
-    this.text = text || this.join('\n');
+    this.text = text || lines.text || (lines.text = this.join('\n'));
+
+    cached || (cache[this.text] = lines);
     this.source = source;
   }
 }
