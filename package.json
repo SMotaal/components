@@ -16,7 +16,8 @@
     "@types/node": "latest",
     "prettier": "latest",
     "rollup": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+		"http-server": "latest"
   },
   "peerDependencies": {
     "carlo": "*"
