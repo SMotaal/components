@@ -1,4 +1,4 @@
-import {html} from '../lib/helpers.js';
+import {html} from '../../lib/helpers.js';
 
 class RichEditorElement extends HTMLElement {
   constructor() {
