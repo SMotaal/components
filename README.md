@@ -1,9 +1,3 @@
-# Web Components
+# @smotaal/components
 
-
-
-<!--
-
-https://github.com/valdrinkoshi/virtual-scroller/blob/master/lit-html/lit-repeater.js
-
->
+Experimental web components prototypes and tools.
