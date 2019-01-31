@@ -6,7 +6,7 @@
   "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
   "exports": {},
   "scripts": {
-    "serve": "npx -q http-server --cors",
+    "serve": "npx -q http-server --cors -s",
     "start": "node start.js",
     "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
     "compile": "rollup -c",
