@@ -1,0 +1,16 @@
+{
+  "name": "prototyping",
+  "displayName": "prototyping✲",
+  "version": "0.0.0",
+  "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "description": "Runtime prototyping abstractions & tools",
+  "license": "MIT",
+  "browser": "./browser/prototyping.js",
+  "main": "./node/index",
+  "module": "./prototyping.js",
+  "exports": {
+    "./": "./prototyping.js",
+    "./node": "./node/prototyping.js",
+    "./browser": "./browser/prototyping.js"
+  }
+}

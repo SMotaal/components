@@ -1,0 +1,82 @@
+slot#code {
+  --code-wrap-indent: 1em;
+
+  font-size: var(--code-font-size);
+  font-family: var(--code-font-family);
+
+  counter-reset: line-number var(--code-first-line-number, 1);
+  z-index: 1;
+  box-sizing: content-box;
+}
+
+slot#code::slotted(*) {
+  /* content: counter(line-number); */
+  counter-increment: line-number;
+
+  /* color: var(--code-gutter-text-color); */
+  /* font-size: var(--code-font-size); */
+  /* font-family: var(--code-font-family); */
+  line-height: var(--code-line-height);
+  white-space: pre;
+  /* text-align: right; */
+
+  position: relative;
+  display: block;
+  box-sizing: content-box;
+  /* top: auto; bottom: auto; left: auto; right: auto; */
+  margin: 0;
+  padding: 0 var(--code-inset);
+  /* text-indent: 0; */
+
+  /* pointer-events: none; */
+}
+
+/* slot#code.indent::slotted(*) */
+:host(.indent-code) slot#code.indent::slotted(*) {
+  padding-left: calc(1 * var(--code-wrap-indent) + var(--code-inset));
+  text-indent: calc(-1 * var(--code-wrap-indent));
+}
+
+:host(.before-code) slot#code::slotted(*)::before,
+:host(.line-numbers.after-code) slot#code::slotted(*)::after {
+  color: var(--code-gutter-text-color);
+  font-size: var(--code-gutter-font-size);
+  font-family: var(--code-gutter-font-family);
+  line-height: var(--code-gutter-line-height);
+  white-space: pre-line;
+
+  position: absolute;
+  box-sizing: content-box;
+  /* margin: auto; */
+  top: 0;
+  bottom: 0;
+  text-indent: 0;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+/* slot#code::slotted(*)::before */
+:host(.before-code) slot#code::slotted(*)::before {
+  content: '';
+  /* text-align: right; */
+
+  display: block;
+  left: calc(-1 * var(--code-gutter-width));
+  right: 0;
+  padding: 0;
+  text-indent: 0;
+}
+
+:host(.line-numbers.after-code) slot#code::slotted(*)::after {
+  content: counter(line-number);
+  text-align: right;
+
+  display: inline-block;
+  left: calc(-1 * var(--code-gutter-width));
+  right: 100%;
+  padding: 0 var(--code-gutter-inset);
+  /* position: sticky; */
+  /* left:0; */
+  /* width: var(--code-gutter-width); */
+}

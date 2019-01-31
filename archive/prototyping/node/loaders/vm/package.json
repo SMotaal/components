@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "@prototyping/node-vm-loader",
+  "version": "0.0.0",
+  "main": "loader",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./": "./loader.mjs"
+  }
+}
