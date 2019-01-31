@@ -3,11 +3,11 @@ import {html, css, Component, Attributes, Toggle} from '../helpers.js';
 const style = css`
   :host {
     /* contain: style; */
-    z-index: 1;
     box-sizing: border-box;
     position: sticky;
-    top: -1px;
-    background-color: #9991;
+    top: 0%;
+    background-color: #eee9;
+    z-index: 1;
     /* transform: translateZ(1); */
     /* opacity: 0.75; */
   }
@@ -20,9 +20,10 @@ const style = css`
     background-color: #fff1;
     backdrop-filter: blur(5px) contrast(0.95);
     position: sticky;
-    top: -1px;
+    top: 0%;
+    left: 0%;
     user-select: none;
-    /* z-index: 1; */
+    z-index: 1;
   }
 
   details:focus,
