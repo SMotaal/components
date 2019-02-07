@@ -1,13 +1,16 @@
-import {html, css, Toggle} from '../helpers.js';
+import {html, css, local} from '../helpers.js';
 import {SourceViewElement} from './source-view.js';
+import {sourceTextStyle, sourceTextStyleInherit} from './source-text.js';
 
 import './options-view.js';
 
-const style = css`
+const styles = css`
+  @import '${local(`elements/source-view.css`)}';
   :host {
     overflow-x: scroll;
     overflow-y: scroll;
     /* transform: translateZ(1); */
+    /* ${sourceTextStyle} */
   }
 `;
 
@@ -59,22 +62,16 @@ try {
   SourceEditorElement.shadowRoot = {mode: 'closed'};
 
   /** @type {DocumentFragment} */
-  SourceEditorElement.template = SourceViewElement.template.cloneNode(true);
-
-  SourceEditorElement.template.prepend(html`
+  SourceEditorElement.styles = styles;
+  SourceEditorElement.template = html`
     <options-view id="options">
-      <!-- <label><input id="enable-outlines" type="checkbox" />outlines</label> -->
-      <!-- <label><input id="enable-linenumbers" type="checkbox" />linenumbers</label> -->
-      <!-- <label><input id="enable-wraplines" type="checkbox" />wrap-lines</label> -->
       <label><input id="is-editable" checked type="checkbox" />editable</label>
       <label><input id="use-spellcheck" type="checkbox" />spellcheck</label>
       <label><input id="use-autocorrect" type="checkbox" />autocorrect</label>
       <label><input id="use-autocapitalize" type="checkbox" />autocapitalize</label>
     </options-view>
-    <style>
-      ${style}
-    </style>
-  `);
+    ${SourceViewElement.template}
+  `;
 
   customElements.define('source-editor', SourceEditorElement);
 } catch (exception) {
