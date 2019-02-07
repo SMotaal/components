@@ -1,6 +1,6 @@
 import {html, css, Component, Attributes, Toggle} from '../helpers.js';
 
-const style = css`
+const styles = css`
   :host {
     /* contain: style; */
     box-sizing: border-box;
@@ -89,10 +89,9 @@ try {
       <summary id="summary">Options</summary>
       <div id="grid"><slot id="slot"></slot></div>
     </details>
-    <style>
-      ${style}
-    </style>
   `;
+
+  OptionsView.styles = styles;
 
   customElements.define('options-view', OptionsView);
 } catch (exception) {
