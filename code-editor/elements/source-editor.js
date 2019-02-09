@@ -1,4 +1,4 @@
-import {html, css, local} from '../helpers.js';
+import {html, css, local} from './helpers.js';
 import {SourceViewElement} from './source-view.js';
 import {sourceTextStyle, sourceTextStyleInherit} from './source-text.js';
 

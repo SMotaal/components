@@ -1,7 +1,5 @@
-import {html, css, Component, local} from '../helpers.js';
+import {html, css, Component, local} from './helpers.js';
 import {SourceView} from '../classes/source-view.js';
-// import {SPAN, BLOCK} from '../classes/source-rows.js';
-
 import {sourceTextStyle, sourceTextStyleInherit} from './source-text.js';
 
 export const SPAN = 'code';

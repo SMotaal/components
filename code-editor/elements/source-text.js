@@ -1,4 +1,4 @@
-import {html, css, Component, local, Attributes} from '../helpers.js';
+import {html, css, local, Component, Attributes} from './helpers.js';
 
 export const sourceTextStyle = css`
   /* source-text-style */

@@ -1,4 +1,4 @@
-import {html, css, Component, Attributes, Toggle} from '../helpers.js';
+import {html, css, Component, Attributes, Toggle} from './helpers.js';
 
 const styles = css`
   :host {
