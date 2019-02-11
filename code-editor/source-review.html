@@ -99,7 +99,7 @@
     <script type="module">
       import './elements/options-view.js';
       import './elements/source-view.js';
-      import {renderSourceTextFrom, loadSourceTextFrom} from './helpers.js';
+      import {loadSourceTextFrom} from './helpers.js';
 
       const sourceView = document.querySelector('source-view');
       if (sourceView) {
@@ -107,9 +107,6 @@
           const sourceText = await loadSourceTextFrom('./classes/source-rows.js');
           sourceView.source = sourceText;
         })();
-        // renderSourceTextFrom('./element.js', sourceView);
-        // renderSourceTextFrom('./element.js', sourceView);
-        // sourceView.appendChild(renderSourceText(loadSourceTextFrom('./element.js')));
       }
     </script>
   </body>

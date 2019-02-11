@@ -1,4 +1,4 @@
-export {loadSourceTextFrom, renderSourceTextFrom} from './helpers/demo.js';
+export {loadSourceTextFrom} from '../lib/fetch.js';
 export {globals} from '../lib/globals.js';
 
 export const base = `${new URL('./', import.meta.url)}`;
