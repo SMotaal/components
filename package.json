@@ -1,35 +1,38 @@
 {
   "private": true,
   "name": "@smotaal/components",
-  "description": "TBD",
-  "version": "0.0.0",
+  "description": "smotaal.io/components",
+  "version": "0.0.0-alpha.2",
   "author": "Saleh Abdel Motaal <saleh@grasppe.com>",
+  "repository": "https://github.com/SMotaal/components.git",
+  "license": "MIT",
+	"type": "module",
   "exports": {},
   "scripts": {
     "serve": "npx -q http-server --cors -s",
-    "start": "node start.js",
     "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
     "compile": "rollup -c",
     "nes": "~/Projects/@smotaal/node/node-esm/out/Release/node"
   },
-  "devDependencies": {
-    "@types/node": "latest",
-    "prettier": "latest",
-    "rollup": "latest",
-    "typescript": "latest",
-		"http-server": "latest"
-  },
-  "peerDependencies": {
+  "otherDependencies": {
     "carlo": "*"
   },
-  "resolutions": {
-    "pseudom": "./packages/pseudom"
+  "devDependencies": {
+    "@types/node": "*",
+    "prettier": "*",
+    "rollup": "*",
+    "typescript": "*",
+    "http-server": "*",
+    "@smotaal/esm": "SMotaal/esm"
   },
   "workspaces": {
     "packages": [
       "code-editor",
       "packages/fragma",
       "packages/pseudom"
+    ],
+    "nohoist": [
+      "**/pseudom"
     ]
   }
 }
