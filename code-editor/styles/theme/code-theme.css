@@ -1,11 +1,11 @@
-@import url('https://cdn.jsdelivr.net/npm/@typopro/web-iosevka/TypoPRO-Iosevka.css');
+@import url('/pholio/styles/fonts/iosevka/iosevka.css');
 
 :host([theme='default']),
 :host(:not([theme])),
 :host > .default-theme {
   /* CODE */
 
-  --code-theme-font: 'Iosevka', 'TypoPRO Iosevka Term', monospace;
+  --code-theme-font: 'Iosevka Web', monospace;
 
   /* Avoid relative font-sizes */
   --code-theme-font-size: 13px;
