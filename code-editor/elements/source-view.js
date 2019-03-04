@@ -6,19 +6,15 @@ export const SPAN = 'code';
 export const BLOCK = 'source-text';
 
 const styles = css`
-  /* @import '${local(`styles/theme/code-theme.css`)}'; */
-  /* @import '${local(`styles/theme/code-host.css`)}'; */
-  @import '${local(`elements/source-view.css`)}';
+  @import '${local(`styles/theme/code-theme.css`)}';
+  @import '${local(`styles/theme/code-host.css`)}';
 
   :host {
-    /*
     box-sizing: border-box;
     background-color: var(--code-background);
-    */
     ${sourceTextStyle}
   }
 
-  /*
   #wrapper {
     display: grid;
     width: max-content;
@@ -31,26 +27,20 @@ const styles = css`
     color: var(--code-text);
     background-color: var(--code-background);
   }
-  */
 
-  /*
   slot#code {
     counter-reset: line-number var(--code-first-line-number, 1);
     --code-wrap-indent: 1em;
     --code-gutter-inset: 1em;
     white-space: pre;
-
-    ${'' && sourceTextStyle}
+    /* ${'' && sourceTextStyle} */
   }
-  */
 
-  /*
   slot#code::slotted(*) {
     box-sizing: content-box;
     margin: 0;
     padding: 0;
-
-    ${'' && sourceTextStyle}
+    /* ${'' && sourceTextStyle} */
   }
 
   slot#code::slotted(source-text:not([line-number])) {
@@ -61,8 +51,6 @@ const styles = css`
     outline: 0.5px solid #9996;
     background-color: #9991;
   }
-  */
-
 `;
 
 /** @implements {SourceView} */

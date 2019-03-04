@@ -1,16 +1,13 @@
 import {html, css, local} from './helpers.js';
 import {SourceViewElement} from './source-view.js';
-import {sourceTextStyle, sourceTextStyleInherit} from './source-text.js';
-
 import './options-view.js';
 
 const styles = css`
-  @import '${local(`elements/source-view.css`)}';
+  ${SourceViewElement.styles}
+
   :host {
     overflow-x: scroll;
     overflow-y: scroll;
-    /* transform: translateZ(1); */
-    /* ${sourceTextStyle} */
   }
 `;
 
@@ -41,10 +38,11 @@ export class SourceEditorElement extends SourceViewElement {
     {
       /** @type {{[name:string]: HTMLInputElement }} */
       const {
-        '#is-editable': contentEditable,
-        '#use-spellcheck': spellcheck,
-        '#use-autocorrect': autocorrect,
-        '#use-autocapitalize': autocapitalize,
+        // ['#content']: editable,
+        ['#is-editable']: contentEditable,
+        ['#use-spellcheck']: spellcheck,
+        ['#use-autocorrect']: autocorrect,
+        ['#use-autocapitalize']: autocapitalize,
       } = this;
 
       contentEditable && createToggle(contentEditable, value => (editable.contentEditable = value));
@@ -56,9 +54,6 @@ export class SourceEditorElement extends SourceViewElement {
 }
 
 try {
-  // const base = `${new URL('./', import.meta.url)}`;
-  // const local = specifier => `${new URL(specifier, base)}`;
-
   SourceEditorElement.shadowRoot = {mode: 'closed'};
 
   /** @type {DocumentFragment} */
