@@ -1,5 +1,8 @@
+//@ts-check
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
+
+import * as helpers from './helpers.js';
 
 declare global {
   interface DocumentOrShadowRoot {
@@ -11,6 +14,3 @@ declare global {
     once: boolean;
   }
 }
-
-
-type Extends<U, T> = U extends T ? true : false;
