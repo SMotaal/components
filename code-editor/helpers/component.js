@@ -92,7 +92,6 @@ export class Component extends HTMLElement {
       const node = (style = document.createElement('style'));
       node.loaded = new Promise(resolve => {
         const handler = event => {
-          root.addEventListener('load', console.warn, {capture: true, passive: false, once: true});
           node.removeEventListener('load', handler);
           node.removeEventListener('error', handler);
           node.removeEventListener('abort', handler);
@@ -103,7 +102,6 @@ export class Component extends HTMLElement {
         node.addEventListener('abort', handler, {capture: true, passive: false, once: true});
       });
       style.textContent = styles;
-      // root === host || (style = void root.prepend(style));
     }
 
     if (template) {
@@ -116,26 +114,15 @@ export class Component extends HTMLElement {
         const name = `::${element.name || ''}`;
         name in this || (this[name] = element);
       }
-      // root === host || (fragment = void root.prepend(fragment));
     }
 
     root === host
       ? setTimeout(() => (fragment = style = void initializeRoot(host, fragment, style, root)), 0)
       : (fragment = style = void initializeRoot(host, fragment, style, root));
-
-    // setTimeout( () => {
-    //   style && (style = void root.prepend(style));
-    //   fragment && (fragment = void root.prepend(fragment));
-    //   root === host && (host.style.visibility = '');
-    // }, 0);
   }
 
   connectedCallback() {
     this.attributes.isInitialized === false && this.initializeAttributes();
-    // this.shadowRoot &&
-    //   this.shadowRoot.isInitialized === false &&
-    //   typeof this.initializeShadowRoot === 'function' &&
-    //   this.initializeShadowRoot();
   }
 
   attributeChangedCallback(attributeName, previousValue, nextValue) {
@@ -160,7 +147,7 @@ export class Component extends HTMLElement {
     const span = typeof context === 'string' ? '%s' : '%O';
     detail &&
       (detail.preventDefault
-        ? console.log(`${span}â€¹%sâ€º %O`, context, detail.type, detail, ...args)
+        ? console.log(`${span}‹%s› %O`, context, detail.type, detail, ...args)
         : console.trace(`${span} %O`, context, detail, ...args));
   }
 
