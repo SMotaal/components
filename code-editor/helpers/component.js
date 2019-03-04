@@ -45,7 +45,14 @@ export class Component extends HTMLElement {
     const host = super();
 
     const constructor = new.target;
-    const {prototype, attributes, template, styles, shadowRoot} = constructor;
+    const {
+      prototype,
+      attributes,
+      template,
+      styles,
+      shadowRoot,
+      initializeRoot = Component.initializeRoot,
+    } = constructor;
 
     const root =
       /** @type {ShadowRoot} */
@@ -82,9 +89,21 @@ export class Component extends HTMLElement {
     }
 
     if (styles) {
-      style = document.createElement('style');
+      const node = (style = document.createElement('style'));
+      node.loaded = new Promise(resolve => {
+        const handler = event => {
+          root.addEventListener('load', console.warn, {capture: true, passive: false, once: true});
+          node.removeEventListener('load', handler);
+          node.removeEventListener('error', handler);
+          node.removeEventListener('abort', handler);
+          resolve({node, event});
+        };
+        node.addEventListener('load', handler, {capture: true, passive: false, once: true});
+        node.addEventListener('error', handler, {capture: true, passive: false, once: true});
+        node.addEventListener('abort', handler, {capture: true, passive: false, once: true});
+      });
       style.textContent = styles;
-      root === host || (style = void root.prepend(style));
+      // root === host || (style = void root.prepend(style));
     }
 
     if (template) {
@@ -97,14 +116,18 @@ export class Component extends HTMLElement {
         const name = `::${element.name || ''}`;
         name in this || (this[name] = element);
       }
-      root === host || (fragment = void root.prepend(fragment));
+      // root === host || (fragment = void root.prepend(fragment));
     }
 
-    setTimeout(() => {
-      style && (style = void root.prepend(style));
-      fragment && (fragment = void root.prepend(fragment));
-      root === host && (host.style.visibility = '');
-    }, 0);
+    root === host
+      ? setTimeout(() => (fragment = style = void initializeRoot(host, fragment, style, root)), 0)
+      : (fragment = style = void initializeRoot(host, fragment, style, root));
+
+    // setTimeout( () => {
+    //   style && (style = void root.prepend(style));
+    //   fragment && (fragment = void root.prepend(fragment));
+    //   root === host && (host.style.visibility = '');
+    // }, 0);
   }
 
   connectedCallback() {
@@ -139,5 +162,11 @@ export class Component extends HTMLElement {
       (detail.preventDefault
         ? console.log(`${span}â€¹%sâ€º %O`, context, detail.type, detail, ...args)
         : console.trace(`${span} %O`, context, detail, ...args));
+  }
+
+  static async initializeRoot(host, fragment, style, root) {
+    style && root.prepend(style);
+    fragment && (style && style.loaded && (await style.loaded), root.prepend(fragment));
+    root === host && (host.style.visibility = '');
   }
 }
