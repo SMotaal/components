@@ -11,8 +11,7 @@
   "scripts": {
     "serve": "npx -q http-server --cors -s",
     "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
-    "compile": "rollup -c",
-    "nes": "~/Projects/@smotaal/node/node-esm/out/Release/node"
+    "compile": "rollup -c"
   },
   "otherDependencies": {
     "carlo": "*"
