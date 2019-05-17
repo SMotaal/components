@@ -1,4 +1,4 @@
-@import url('/pholio/styles/fonts/iosevka/iosevka.css');
+@import url('/fonts/iosevka.css');
 
 :host([theme='default']),
 :host(:not([theme])),
