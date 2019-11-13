@@ -17,6 +17,7 @@
     "carlo": "*"
   },
   "devDependencies": {
+    "@smotaal.io/prettier.config": "*",
     "@types/node": "*",
     "prettier": "*",
     "rollup": "*",
